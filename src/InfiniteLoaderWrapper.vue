@@ -28,10 +28,12 @@ export default defineComponent({
     const infiniteLoader = ref(null)
 
     onMounted(() => {
+      // prints object
       console.log(infiniteLoader.value.stateChanger);
     })
 
     const unwatch = watch(infiniteLoader, (vm: any) => {
+      // prints undefined
       console.log(vm.stateChanger);
       if (!vm) return
       emit('infinite', vm.stateChanger)
