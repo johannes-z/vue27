@@ -1,30 +1,25 @@
-import { h } from "vue";
-import { ref } from "vue";
-import { defineComponent } from "vue";
-import MyComponent from './InfiniteLoaderWrapper.vue'
-import { StateChanger } from 'vue-infinite-loading'
+import { inject } from "vue";
+import { provide } from "vue";
+import { onBeforeMount } from "vue";
+import { h, ref, defineComponent } from "vue";
+import { ChildComponent } from "./ChildComponent";
+import { INJECT_KEY } from "./symbols";
 
-const sleep = time => new Promise(res => setTimeout(res, time, "done sleeping"));
+function getSlots () {
+  const value = inject(INJECT_KEY) as string
+  return {
+    test: () => h('div', value)
+  }
+}
 
 export const TestComponent = defineComponent({
-  setup (props, ctx) {
-    const errorMessage = ref('')
+  setup () {
+    provide(INJECT_KEY, 'injected value')
+  },
 
-    const onHandle = async ($state: StateChanger) => {
-      console.log($state);
-
-      await sleep(2000)
-
-      console.log($state)
-    }
-
-    return () => h(MyComponent, {
-      props: {
-        errorMessage: errorMessage.value
-      },
-      on: {
-        infinite: onHandle,
-      },
+  render () {
+    return h(ChildComponent, {
+      scopedSlots: getSlots()
     })
   }
 })
