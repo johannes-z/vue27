@@ -1,8 +1,9 @@
 <template>
   <div>
     <div>{{ label }}</div>
-    <div><slot name="rootSlot" :value="label" /></div>
-    <div><slot name="customSlot" :value="label" /></div>
+    <div>default: <slot /></div>
+    <div>rootSlot: <slot name="rootSlot" :value="label" /></div>
+    <div>customSlot: <slot name="customSlot" :value="label" /></div>
   </div>
 </template>
 

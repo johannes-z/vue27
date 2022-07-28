@@ -10,7 +10,7 @@
   <div id="app">
     <main-component>
       <template name="rootSlot" slot-scope="props">
-        Slot from Root
+        scopedSlot from Root
       </template>
     </main-component>
   </div>
@@ -23,7 +23,7 @@
         el: '#app',
         components: { MainComponent }
       })
-      }, 100)
+      }, 500)
   </script>
 </body>
 </html>

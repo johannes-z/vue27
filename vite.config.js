@@ -7,14 +7,7 @@ export default defineConfig({
     entries: 'src/dev.ts',
   },
   plugins: [
-    vue({
-      jsx: true,
-      template: {
-        compilerOptions: {
-          whitespace: 'condense',
-        },
-      }
-    }),
+    vue(),
   ],
   resolve: {
     alias: [
