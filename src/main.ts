@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import { TestComponent } from './TestComponent'
+import './setup'
 
-new Vue({
-  render: h => h(TestComponent)
-}).$mount('#app')
+import Vue from 'vue'
+import MainComponent from './MainComponent'
+
+window.Vue = Vue
+window.MainComponent = MainComponent

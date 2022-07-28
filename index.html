@@ -7,7 +7,23 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <main-component>
+      <template name="rootSlot" slot-scope="props">
+        Slot from Root
+      </template>
+    </main-component>
+  </div>
+
   <script src="./src/main.ts" type="module"></script>
+  <script>
+    setTimeout(() => {
+      const { Vue, MainComponent } = window
+      new Vue({
+        el: '#app',
+        components: { MainComponent }
+      })
+      }, 100)
+  </script>
 </body>
 </html>

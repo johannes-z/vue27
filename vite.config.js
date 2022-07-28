@@ -16,6 +16,11 @@ export default defineConfig({
       }
     }),
   ],
+  resolve: {
+    alias: [
+      { find: 'vue', replacement: 'vue/dist/vue.js' },
+    ],
+  },
   server: {
     port: 8080,
     host: 'localhost',
@@ -29,7 +34,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
       name: 'test',
-      formats: ['umd'],
+      formats: ['iife'],
       fileName: (format) => 'test.js',
     },
   },

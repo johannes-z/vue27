@@ -13,12 +13,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-vue2": "^1.1.2",
-    "vite": "^3.0.1",
+    "vite": "^3.0.3",
     "vite-plugin-vue2": "^2.0.2",
-    "vue-template-compiler": "^2.7.7"
+    "vue-template-compiler": "^2.7.8"
   },
   "dependencies": {
-    "vue": "^2.7.7",
+    "vue": "^2.7.8",
     "vue-infinite-loading": "^2.4.5"
   }
 }
